@@ -9,6 +9,16 @@ const hasWon = (context, _) => {
     return true;
   }
 
+  for (let i = 0; i < context.board.length; i++) {
+    const isVerticalMatch = context.board.every(
+      (row) => row[0] && row[0] === row[i]
+    );
+
+    if (isVerticalMatch) {
+      return true;
+    }
+  }
+
   return false;
 };
 
