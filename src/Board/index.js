@@ -9,7 +9,17 @@ function Board() {
   return (
     <div className="App">
       {current.value === "completed" && "GAME OVER"}
-      <Scoreboard>xxo</Scoreboard>
+      <Scoreboard>
+        <Scoreboard.Title>xxo</Scoreboard.Title>
+        <Scoreboard.Players>
+          <Scoreboard.Players.Player $active={current.context.marker === "X"}>
+            X
+          </Scoreboard.Players.Player>
+          <Scoreboard.Players.Player $active={current.context.marker === "O"}>
+            O
+          </Scoreboard.Players.Player>
+        </Scoreboard.Players>
+      </Scoreboard>
       <Container>
         {current.context.board.map((row, rowIndex) =>
           row.map((val, colIndex) => (
