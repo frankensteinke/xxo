@@ -19,6 +19,14 @@ const hasWon = (context, _) => {
     }
   }
 
+  const isPrimaryDiagonalMatch = context.board.every(
+    (row, i) => row[i] && row[i] === context.board[i][i]
+  );
+
+  if (isPrimaryDiagonalMatch) {
+    return true;
+  }
+
   return false;
 };
 
